@@ -18,7 +18,6 @@ class NGramBot:
         if os.path.exists(self.filename):
             with open(self.filename, 'r') as f:
                 data = json.load(f)
-                # ✅ Створюємо defaultdict і заповнюємо його
                 model = defaultdict(lambda: {"R": 0, "P": 0, "S": 0})
                 for k, v in data.items():
                     model[tuple(k.split(','))] = v
